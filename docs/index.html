@@ -53,24 +53,27 @@
     @media(hover:hover){.poetry-card:hover,.poetry-card:focus-within{transform:translateY(-8px) scale(1.018);background:#201d18;border-color:#927749;box-shadow:0 20px 38px rgba(0,0,0,.32);z-index:1}.poetry-card:hover:before{transform:translateY(-4px) rotate(-8deg);color:rgba(214,173,89,.55)}.poetry-card:hover blockquote{transform:translateX(3px)}.story-art:hover,.menu-feature img:hover,.menu-card:hover,.home-event-card:hover,.home-event-card:focus-within{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 18px 38px rgba(0,0,0,.3)} @media(prefers-reduced-motion:reduce){.home-event-card{transition:none!important}.home-event-card:hover,.home-event-card:focus-within{transform:none!important}}.detail:hover{transform:translateX(4px);border-color:#776341}.poetry-controls button:hover{transform:translateY(-2px);background:var(--gold);color:var(--ink);border-color:var(--gold)}}
     @media(prefers-reduced-motion:reduce){.reveal-on-scroll{opacity:1;transform:none;transition:none}.hero-content{animation:none}.poetry-card,.poetry-card:before,.poetry-card blockquote,.poetry-controls button,.story-art,.menu-feature img,.menu-card,.home-event-card,.booking,.detail,.map-panel{transition:none}}
   </style>
+  <link rel="stylesheet" href="design.css">
 </head>
-<body>
+<body class="home-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar"><nav class="nav wrap" aria-label="Navegación principal">
     <a class="brand" href="#inicio"><img src="images/images%20(1).jfif" alt="Emblema de El Café de los poetas Muertos"><span>El Café de los<br>poetas Muertos</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">☰</button>
-    <ul class="nav-links" id="nav-links"><li><a href="#historia">La casa</a></li><li><a href="menu.html">Menú</a></li><li><a href="#eventos">Eventos</a></li><li><a href="#versos">Versos</a></li><li><a href="#visitanos">Visítanos</a></li><li><a class="nav-cta" href="eventos.html">Inscríbete</a></li></ul>
+    <ul class="nav-links" id="nav-links"><li><a href="#historia">La casa</a></li><li><a href="menu.html">Menú</a></li><li><a href="#eventos">Eventos</a></li><li><a href="#versos">Versos</a></li><li><a href="#visitanos">Visítanos</a></li><li><a class="nav-cta" href="eventos.html">Agenda cultural</a></li></ul>
   </nav></header>
-  <main>
-    <section class="hero" id="inicio"><div class="hero-portraits" aria-hidden="true"><img src="images/escritores/benedetti.jfif" alt="" style="--portrait-delay:0s"><img src="images/escritores/borges.jfif" alt="" style="--portrait-delay:-3s"><img src="images/escritores/EDGAR%20ALAN%20POE.jpg" alt="" style="--portrait-delay:-6s"><img src="images/escritores/julio%20cortazar.jfif" alt="" style="--portrait-delay:-9s"><img src="images/escritores/pizarnik%7D.jfif" alt="" style="--portrait-delay:-12s"></div><div class="wrap"><div class="hero-content">
-      <div class="eyebrow">Café · Poesía · Musica</div>
-      <h1>Un café para<br><em>quedarse</em><br>un verso más.</h1>
-      <p>Entre aromas, libros y conversaciones que no miran el reloj, siempre hay lugar para una taza más.</p>
-      <div class="actions"><a class="button" href="menu.html">Descubre el menú</a><a class="button button-ghost" href="eventos.html">Próximos eventos</a></div>
-    </div></div><div class="hero-note">Carpe diem · sirve otro café</div></section>
+  <main id="contenido">
+    <section class="hero" id="inicio"><div class="wrap"><div class="hero-content">
+      <div class="eyebrow">León, Guanajuato · Café y cultura</div>
+      <h1>Café, libros<br>y un verso<br><em>más.</em></h1>
+      <p>Un refugio entre libros, café recién hecho y conversaciones sin prisa. Encuentra tu próxima pausa en la casa.</p>
+      <div class="actions"><a class="button" href="menu.html">Descubre el menú</a><a class="button button-ghost" href="#visitanos">Cómo llegar ↗</a></div>
+    </div><figure class="hero-local"><img src="images/lugar.jfif" alt="El interior del café: mesas de madera, ladrillo y luz cálida" fetchpriority="high" width="600" height="650"><figcaption><span>01 / La casa</span><span>Un lugar para quedarse.</span></figcaption></figure></div></section>
     <div class="manifesto"><div class="wrap"><p>“Aquí los días se toman <b>despacio</b> y las ideas, <b>bien cargadas</b>.”</p></div></div>
-    <section class="section" id="historia"><div class="wrap story-grid"><div class="story-art"><img class="place-photo" src="images/lugar.jfif" alt="Interior de El Café de los Poetas Muertos, con muros de ladrillo y luz cálida" loading="lazy"></div><div class="story-copy"><span class="eyebrow">Nuestra pequeña revolución</span><h2 class="section-title">Un refugio para<br>las almas despiertas.</h2><p class="lead">Creemos que un buen café puede abrir la puerta a una gran conversación. Y que la poesía, como la cafeína, siempre encuentra la manera de mantenernos vivos.</p><p>Somos una cafetería para lectores, curiosos y amantes de la sobremesa. Ven por el espresso, quédate por la compañía y deja que el día encuentre su propio ritmo.</p><a class="button button-ghost" href="#visitanos">Ven a conocernos</a></div></div></section>
+    <section class="home-tastes" aria-labelledby="tastes-title"><div class="wrap"><div class="tastes-heading"><div><span class="eyebrow">De nuestra carta</span><h2 id="tastes-title">Tu pausa tiene buen gusto.</h2></div><a class="text-link" href="menu.html">Explorar menú y precios →</a></div><div class="taste-grid"><a class="taste" href="menu.html"><span class="taste-image one" role="img" aria-label="Imagen ilustrativa de capuchino"></span><span class="taste-line"><strong>Capuchino / Latte</strong><span>Desde $60</span></span></a><a class="taste" href="menu.html"><span class="taste-image two" role="img" aria-label="Imagen ilustrativa de matcha latte"></span><span class="taste-line"><strong>Matcha Latte</strong><span>Desde $75</span></span></a><a class="taste" href="menu.html"><span class="taste-image three" role="img" aria-label="Imagen ilustrativa de croissant"></span><span class="taste-line"><strong>Croissant</strong><span>$75</span></span></a></div><p class="taste-note">Imágenes ilustrativas · Precios en MXN. Consulta presentación y disponibilidad en barra.</p></div></section>
+    <section class="section" id="historia"><div class="wrap story-grid"><div class="story-art"><img class="place-photo" src="images/cafe.webp" alt="Una taza de café de la casa con una frase literaria" loading="lazy"></div><div class="story-copy"><span class="eyebrow">Nuestra pequeña revolución</span><h2 class="section-title">Un refugio para<br>las almas despiertas.</h2><p class="lead">Creemos que un buen café puede abrir la puerta a una gran conversación. Y que la poesía, como la cafeína, siempre encuentra la manera de mantenernos vivos.</p><p>Somos una cafetería para lectores, curiosos y amantes de la sobremesa. Ven por el espresso, quédate por la compañía y deja que el día encuentre su propio ritmo.</p><a class="button button-ghost" href="#visitanos">Ven a conocernos</a></div></div></section>
     <section class="section menu-section" id="menu"><div class="wrap menu-feature"><img src="images/cafe.webp" alt="Taza de café servida en el local, con una frase literaria" loading="lazy"><div><span class="eyebrow">Una pausa con carácter</span><h2 class="section-title">Del grano a la página</h2><p class="section-intro">Café caliente, frío o frappé, bebidas para todos los antojos y algo rico para acompañar. Así se vive una pausa en nuestra casa.</p><a class="button" href="menu.html">Ver menú completo y precios</a></div></div></section>
-    <section class="section" id="eventos"><div class="wrap"><div class="center"><span class="eyebrow">Encuentros en la cafetería</span><h2 class="section-title">Próximos eventos</h2><p class="section-intro">Lecturas, talleres y noches para compartir. Elige un evento y aparta tu lugar.</p></div><div class="home-event-list" id="home-event-list"><p class="home-event-empty">Cargando eventos…</p></div><div class="center" style="margin-top:28px"><a class="button" href="eventos.html">Ver todos los eventos e inscribirme</a></div></div></section>
+    <section class="section" id="eventos"><div class="wrap"><div class="center"><span class="eyebrow">Encuentros en la cafetería</span><h2 class="section-title">Próximos eventos</h2><p class="section-intro">Lecturas, talleres y noches para compartir. Descubre qué sigue en la casa.</p></div><div class="home-event-list" id="home-event-list" aria-live="polite"><p class="agenda-loading" role="status">Preparando la agenda…</p></div><div class="center" style="margin-top:28px"><a class="button" href="eventos.html">Explorar la agenda cultural</a></div></div></section>
     <section class="section poetry-section" id="versos"><div class="wrap"><div class="center"><span class="eyebrow">Lecturas para acompañar tu taza</span><h2 class="section-title">Voces que nos inspiran</h2><p class="section-intro">Pequeños homenajes originales a grandes autores. Estos textos no son citas ni fragmentos de sus obras.</p></div><div class="poetry-viewport"><div class="poetry-track" id="poetry-track" aria-label="Tarjetas de homenajes literarios">
       <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>Hay palabras que no curan la herida: se sientan a nuestro lado hasta que amanece.</blockquote><span class="poetry-author">En la mesa de Jaime Sabines</span></article>
       <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>Dejo una luz encendida en la página, por si la nostalgia decide volver a casa.</blockquote><span class="poetry-author">En la mesa de Mario Benedetti</span></article>
@@ -87,8 +90,8 @@
       <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>La palabra encuentra su orilla cuando alguien la lee en voz baja.</blockquote><span class="poetry-author">En la mesa de Octavio Paz</span></article>
     </div></div><div class="poetry-controls"><button type="button" id="poetry-prev" aria-label="Tarjetas anteriores">←</button><span class="poetry-status" id="poetry-status" aria-live="polite">1–3 de 13</span><button type="button" id="poetry-next" aria-label="Más tarjetas">→</button></div></div></section>
     <section class="quote-section"><div class="wrap"><blockquote>“La vida es eso que pasa entre el primer sorbo y el último verso.”</blockquote><cite>Una verdad de esta casa</cite></div></section>
-    <section class="section" id="visitanos"><div class="wrap visit-grid"><div class="visit-copy"><span class="eyebrow">La mesa está puesta</span><h2 class="section-title">Nos vemos<br>entre tazas.</h2><p>Ven a leer un rato, platicar sin prisa o simplemente disfrutar el aroma del café recién hecho.</p><div class="details"><div class="detail"><b>Dirección</b><span>Blvd. Vasco de Quiroga 318, colonia Las Fuentes, León, Guanajuato.</span></div><div class="detail"><b>Horario</b><span>Actualiza aquí los días y horarios de atención</span></div><div class="detail"><b>Contacto</b><span>Agrega aquí teléfono o redes sociales</span></div></div></div>
-      <div class="booking"><h3>Nos encontramos en los eventos</h3><p>Organiza una lectura, taller o encuentro cultural; o inscríbete para participar en los próximos eventos del café.</p><a class="button" href="eventos.html">Explorar eventos e inscribirme</a><p class="form-note">¿Organizas un evento? Solicita al café acceso administrativo para publicarlo.</p></div>
+    <section class="section" id="visitanos"><div class="wrap visit-grid"><div class="visit-copy"><span class="eyebrow">La mesa está puesta</span><h2 class="section-title">Nos vemos<br>entre tazas.</h2><p>Ven a leer un rato, platicar sin prisa o simplemente disfrutar el aroma del café recién hecho.</p><div class="details"><div class="detail"><b>Dirección</b><span>Blvd. Vasco de Quiroga 318, colonia Las Fuentes, León, Guanajuato.</span></div><div class="detail"><b>Horario</b><span>Consulta el horario del día en nuestras redes.</span></div><div class="detail"><b>Contacto</b><span><a href="https://www.instagram.com/elcafedelospoetasmuertos/" target="_blank" rel="noopener noreferrer">Escríbenos en Instagram ↗</a></span></div></div></div>
+      <div class="booking"><h3>Nos encontramos en los eventos</h3><p>Organiza una lectura, taller o encuentro cultural; o inscríbete para participar en los próximos eventos del café.</p><a class="button" href="eventos.html">Conocer la agenda cultural</a><p class="form-note">¿Tienes una lectura o un taller en mente? Escríbenos para platicarlo.</p></div>
     </div><div class="wrap map-panel"><iframe title="Mapa de El Café de los poetas Muertos en León, Guanajuato" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.8198606587935!2d-101.6575824!3d21.119746799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbf0062397483%3A0x31f7c76a66b78538!2sEl%20caf%C3%A9%20de%20los%20poetas%20muertos!5e0!3m2!1ses-419!2smx!4v1792469357298!5m2!1ses-419!2smx" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe><div class="map-caption">Blvd. Vasco de Quiroga 318, colonia Las Fuentes, León, Guanajuato. <a href="https://www.google.com/maps/search/?api=1&query=El+caf%C3%A9+de+los+poetas+muertos+Le%C3%B3n+Guanajuato" target="_blank" rel="noopener noreferrer">Abrir indicaciones en Google Maps ↗</a></div></div></section>
   </main>
   <footer><div class="wrap footer-row"><div class="footer-brand">El Café de los Poetas Muertos</div><div>Un café para quedarse un verso más.</div><div class="footer-links"><a href="#inicio">Inicio</a><a href="menu.html">Menú</a><a href="#visitanos">Contacto</a><a class="social-link" href="https://www.instagram.com/elcafedelospoetasmuertos?obrf=MXh5bGdsYnRxZXl2NQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram de El Café de los Poetas Muertos (abre en pestaña nueva)" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r=".8" fill="currentColor" stroke="none"/></svg></a><a class="social-link" href="https://www.facebook.com/profile.php?id=61551230459953&amp;sk=directory_category" target="_blank" rel="noopener noreferrer" aria-label="Facebook de El Café de los Poetas Muertos (abre en pestaña nueva)" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.2V10H7.3v3H10v8h3.4z"/></svg></a></div><div>© 2026 · Hecho con café y poesía</div></div></footer>
@@ -125,7 +128,7 @@
         Math.abs(poetryCardPosition(card) - poetryTrack.scrollLeft) < Math.abs(poetryCardPosition(poetryCards[best]) - poetryTrack.scrollLeft) ? i : best, 0);
       const maxIndex = Math.max(0, poetryCards.length - visibleCount);
       const nextIndex = Math.max(0, Math.min(maxIndex, closestIndex + direction * visibleCount));
-      poetryTrack.scrollTo({ left: poetryCardPosition(poetryCards[nextIndex]), behavior: 'smooth' });
+      poetryTrack.scrollTo({ left: poetryCardPosition(poetryCards[nextIndex]), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       poetryStatus.textContent = `${nextIndex + 1}–${Math.min(nextIndex + visibleCount, poetryCards.length)} de ${poetryCards.length}`;
     }
     document.getElementById('poetry-prev').addEventListener('click', () => movePoetry(-1));
@@ -136,7 +139,7 @@
     async function loadHomeEvents() {
       const target = document.getElementById('home-event-list');
       if (location.hostname.endsWith('github.io')) {
-        target.innerHTML = '<p class="home-event-empty">La agenda en línea se habilita en la versión con servidor. Mientras tanto, consulta las próximas actividades directamente en las redes del café.</p>';
+        target.innerHTML = '<div class="agenda-state"><span class="state-mark" aria-hidden="true">&amp;</span><div><h3>La próxima historia está por escribirse.</h3><p>Lecturas, talleres y encuentros alrededor del café. Consulta las próximas fechas y disponibilidad en nuestras redes.</p></div><a class="text-link" href="https://www.instagram.com/elcafedelospoetasmuertos/" target="_blank" rel="noopener noreferrer">Ver agenda en Instagram ↗</a></div>';
         return;
       }
       const controller = new AbortController();
@@ -149,44 +152,19 @@
         const {events} = await response.json();
         const upcoming = events.filter(event => event.status === 'active').slice(0, 3);
         if (!upcoming.length) {
-          target.innerHTML = '<p class="home-event-empty">Pronto anunciaremos nuevos encuentros. Consulta aquí las fechas.</p>';
+          target.innerHTML = '<div class="agenda-state"><span class="state-mark" aria-hidden="true">&amp;</span><div><h3>La próxima historia está por escribirse.</h3><p>Lecturas, talleres y encuentros alrededor del café. Consulta las próximas fechas y disponibilidad en nuestras redes.</p></div><a class="text-link" href="https://www.instagram.com/elcafedelospoetasmuertos/" target="_blank" rel="noopener noreferrer">Ver agenda en Instagram ↗</a></div>';
           return;
         }
         const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
         target.innerHTML = upcoming.map(event => `<article class="home-event-card">${event.image ? `<img src="${apiBase}${escape(event.image)}" alt="Imagen del evento ${escape(event.name)}" loading="lazy">` : ''}<div class="home-event-content"><span class="home-event-meta">${new Intl.DateTimeFormat('es-MX',{dateStyle:'long',timeStyle:'short'}).format(new Date(event.startsAt))} · ${event.available} lugares</span><h3>${escape(event.name)}</h3><p>${escape(event.description.slice(0,180))}${event.description.length>180?'…':''}</p><a class="button button-ghost" href="eventos.html">Ver e inscribirme</a></div></article>`).join('');
       } catch (error) {
         console.error('No fue posible cargar los eventos:', error);
-        target.innerHTML = '<p class="home-event-empty">No fue posible conectar con el servidor de eventos. Abre <a href="http://127.0.0.1:8000/">127.0.0.1:8000</a> y confirma que el servidor Python este iniciado.</p>';
+        target.innerHTML = '<div class="agenda-state"><span class="state-mark" aria-hidden="true">&amp;</span><div><h3>La agenda no está disponible ahora.</h3><p>Puedes volver a intentarlo o consultar las actividades en Instagram.</p></div><div class="state-actions"><button type="button" onclick="loadHomeEvents()">Reintentar</button><a class="text-link" href="https://www.instagram.com/elcafedelospoetasmuertos/">Instagram ↗</a></div></div>';
       } finally {
         clearTimeout(requestTimeout);
       }
     }
     loadHomeEvents();
-    /* El registro ahora se gestiona desde la página de eventos. */
-    const dateField = document.getElementById('fecha');
-    const today = new Date();
-    dateField.min = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-    document.getElementById('reservar').addEventListener('submit', event => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      if (!form.reportValidity()) return;
-      if (!52477) {
-        document.getElementById('form-message').textContent = 'Para activar las reservas, configura el número de WhatsApp del café en el código de esta página.';
-        return;
-      }
-      const data = new FormData(form);
-      const message = [
-        'Hola, quiero reservar una mesa en El Café de los Poetas Muertos.',
-        '',
-        `Nombre: ${data.get('nombre')}`,
-        `Personas: ${data.get('personas')}`,
-        `Fecha: ${data.get('fecha')}`,
-        `Hora: ${data.get('hora')}`
-      ].join('\n');
-      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?${new URLSearchParams({ text: message })}`;
-      window.open(whatsappUrl, '_blank');
-      document.getElementById('form-message').textContent = 'Se abrió el chat del café con tu solicitud. Pulsa Enviar en WhatsApp para confirmar la reserva.';
-    });
   </script>
   <script>
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {

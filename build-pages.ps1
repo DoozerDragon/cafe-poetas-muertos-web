@@ -8,6 +8,8 @@ New-Item -ItemType Directory -Force -Path $pagesRoot | Out-Null
 New-Item -ItemType Directory -Force -Path (Join-Path $pagesRoot 'images') | Out-Null
 Copy-Item -Path (Join-Path $sourceRoot 'images\*') -Destination (Join-Path $pagesRoot 'images') -Recurse -Force
 
+Copy-Item -LiteralPath (Join-Path $sourceRoot 'design.css') -Destination (Join-Path $pagesRoot 'design.css') -Force
+
 function Convert-ToStaticPage {
     param(
         [Parameter(Mandatory)] [string] $Source,

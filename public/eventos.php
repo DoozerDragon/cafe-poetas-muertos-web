@@ -10,11 +10,13 @@
     @media(max-width:700px){.wrap{width:calc(100% - 30px)}.nav{align-items:flex-start;flex-direction:column}.navlinks{gap:15px;flex-wrap:wrap}.event-grid{grid-template-columns:1fr}.hero{padding-top:48px}.footerrow{flex-direction:column;text-align:center}}
     .registration-dialog{width:min(560px,calc(100% - 28px));max-width:none;max-height:min(90dvh,820px);padding:0;border:1px solid var(--line);background:var(--panel);color:var(--cream);box-shadow:0 24px 80px #000b;overflow:auto}.registration-dialog::backdrop{background:#080706c9;backdrop-filter:blur(4px)}.registration{margin:0;padding:clamp(20px,5vw,34px);max-width:none;border:0}.dialog-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}.dialog-close{flex:none;border:1px solid var(--line);background:#100f0d;color:var(--cream);width:38px;height:38px;font-size:1.3rem;cursor:pointer}.registration h2{font:600 clamp(1.5rem,5vw,1.9rem) var(--serif);margin:0 0 5px}.registration>p{color:var(--muted);margin:8px 0 22px}.field{margin-bottom:16px}.field label{display:block;color:var(--gold);font-size:.82rem;margin-bottom:7px}.field input{display:block;width:100%;min-height:46px;padding:12px;background:#100f0d;border:1px solid #454036;color:var(--cream);border-radius:3px;font:inherit}.field input:focus{outline:2px solid var(--gold);outline-offset:1px}.registration .button{width:100%;min-height:48px}.status:empty{display:none}.status{padding-top:5px}.choose-event{min-height:44px}.event-meta{align-items:center}.spots{color:var(--gold);font-size:.82rem}
   </style>
+  <link rel="stylesheet" href="design.css">
 </head>
-<body>
-  <header><nav class="nav wrap"><a class="brand" href="index.php"><img src="images/images%20(1).jfif" alt=""><span>El Café de los<br>Poetas Muertos</span></a><div class="navlinks"><a href="index.php">Inicio</a><a href="menu.php">Menú</a><a href="admin.php">Acceso administración</a></div></nav></header>
-  <section class="hero"><div class="wrap"><span class="eyebrow">Encuentros en la casa</span><h1>Eventos con café<br>y buena compañía.</h1><p>Descubre las próximas lecturas, talleres y encuentros. Elige un evento y reserva tu lugar.</p></div></section>
-  <main class="content wrap"><div class="event-grid" id="event-grid" aria-live="polite"><p class="empty">Cargando eventos…</p></div></main>
+<body class="events-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header><nav class="nav wrap"><a class="brand" href="index.php"><img src="images/images%20(1).jfif" alt=""><span>El Café de los<br>Poetas Muertos</span></a><div class="navlinks"><a href="index.php">Inicio</a><a href="menu.php">Menú</a><a href="index.php#visitanos">Visítanos</a></div></nav></header>
+  <section class="hero"><div class="wrap"><span class="eyebrow">Encuentros en la casa</span><h1>Eventos con café<br>y buena compañía.</h1><p>Lecturas, talleres y encuentros para compartir lo que nos mueve. Consulta las próximas actividades de la casa.</p></div></section>
+  <main class="content wrap" id="contenido"><div class="event-grid" id="event-grid" aria-live="polite"><p class="agenda-loading" role="status">Preparando la agenda…</p></div></main>
   <dialog class="registration-dialog" id="registration-dialog" aria-labelledby="registration-title">
     <form class="registration" id="registration-form"><div class="dialog-head"><h2 id="registration-title">Inscripción</h2><button class="dialog-close" type="button" id="close-registration" aria-label="Cerrar ventana">×</button></div><p id="selected-event">Selecciona primero un evento para registrarte.</p><input type="hidden" id="event-id" name="eventId">
       <div class="field"><label for="name">Nombre completo</label><input id="name" name="name" autocomplete="name" maxlength="100" required></div>
@@ -37,7 +39,7 @@
     const dateText = value => new Intl.DateTimeFormat('es-MX',{dateStyle:'long',timeStyle:'short'}).format(new Date(value));
     async function loadEvents() {
       if (location.hostname.endsWith('github.io')) {
-        grid.innerHTML = '<p class="empty">La agenda y las inscripciones requieren la versión con servidor. Consulta las próximas actividades en las redes del café.</p>';
+        grid.innerHTML = '<div class="agenda-state"><span class="state-mark" aria-hidden="true">&amp;</span><div><h3>La próxima historia está por escribirse.</h3><p>Lecturas, talleres y encuentros alrededor del café. Consulta las próximas fechas y disponibilidad en nuestras redes.</p></div><a class="text-link" href="https://www.instagram.com/elcafedelospoetasmuertos/" target="_blank" rel="noopener noreferrer">Ver agenda en Instagram ↗</a></div>';
         return;
       }
       try {
@@ -45,7 +47,7 @@
         if (!response.ok) throw new Error('No se pudieron cargar los eventos.');
         const {events} = await response.json();
         const visible = events.filter(event => event.status === 'active');
-        grid.innerHTML = visible.length ? visible.map(event => `<article class="event-card">${event.image ? `<img src="${apiBase}${escapeHtml(event.image)}" alt="Imagen del evento ${escapeHtml(event.name)}">` : ''}<div class="event-body"><h2>${escapeHtml(event.name)}</h2><div class="event-meta"><span>${escapeHtml(dateText(event.startsAt))}</span><span>${event.available} lugares disponibles</span></div><p class="event-description">${escapeHtml(event.description)}</p><div class="event-bottom"><span class="spots">Registrados: ${event.registered} / ${event.capacity}</span><button class="button choose-event" type="button" data-id="${event.id}" data-name="${escapeHtml(event.name)}" ${event.available < 1 ? 'disabled' : ''}>${event.available < 1 ? 'Cupo lleno' : 'Registrarme'}</button></div></div></article>`).join('') : '<p class="empty">Por ahora no hay eventos abiertos para inscripción. Vuelve pronto.</p>';
+        grid.innerHTML = visible.length ? visible.map(event => `<article class="event-card">${event.image ? `<img src="${apiBase}${escapeHtml(event.image)}" alt="Imagen del evento ${escapeHtml(event.name)}">` : ''}<div class="event-body"><h2>${escapeHtml(event.name)}</h2><div class="event-meta"><span>${escapeHtml(dateText(event.startsAt))}</span><span>${event.available} lugares disponibles</span></div><p class="event-description">${escapeHtml(event.description)}</p><div class="event-bottom"><span class="spots">Registrados: ${event.registered} / ${event.capacity}</span><button class="button choose-event" type="button" data-id="${event.id}" data-name="${escapeHtml(event.name)}" ${event.available < 1 ? 'disabled' : ''}>${event.available < 1 ? 'Cupo lleno' : 'Registrarme'}</button></div></div></article>`).join('') : '<div class="agenda-state"><span class="state-mark" aria-hidden="true">&amp;</span><div><h3>La próxima historia está por escribirse.</h3><p>Lecturas, talleres y encuentros alrededor del café. Consulta las próximas fechas y disponibilidad en nuestras redes.</p></div><a class="text-link" href="https://www.instagram.com/elcafedelospoetasmuertos/" target="_blank" rel="noopener noreferrer">Ver agenda en Instagram ↗</a></div>';
         grid.querySelectorAll('.choose-event').forEach(item => item.addEventListener('click', () => {
           eventId.value = item.dataset.id;
           document.getElementById('selected-event').textContent = `Vas a inscribirte en: ${item.dataset.name}`;
@@ -54,7 +56,7 @@
           registrationDialog.showModal();
           document.getElementById('name').focus();
         }));
-      } catch (error) { grid.innerHTML = '<p class="empty">No se pudo conectar con el sistema de eventos. Inicia el servidor del proyecto y vuelve a cargar esta página.</p>'; }
+      } catch (error) { grid.innerHTML = '<div class="agenda-state"><span class="state-mark" aria-hidden="true">&amp;</span><div><h3>No pudimos cargar la agenda.</h3><p>Vuelve a intentarlo o consulta las actividades en nuestras redes.</p></div><div class="state-actions"><button type="button" onclick="loadEvents()">Reintentar</button><a class="text-link" href="https://www.instagram.com/elcafedelospoetasmuertos/">Instagram ↗</a></div></div>'; }
     }
     form.addEventListener('submit', async event => {
       event.preventDefault();

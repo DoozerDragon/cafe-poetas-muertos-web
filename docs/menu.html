@@ -19,16 +19,18 @@
     @media(max-width:500px){.wrap{width:calc(100% - 28px)}.nav-links{justify-content:flex-start;gap:12px 18px}.visual-grid,.extras-grid,.food-grid{grid-template-columns:1fr}.menu-image{padding:14px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
+  <link rel="stylesheet" href="design.css">
 </head>
-<body>
+<body class="menu-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar"><nav class="nav wrap" aria-label="Navegación principal">
     <a class="brand" href="index.html"><img src="images/images%20(1).jfif" alt="Emblema del café"><span>El Café de los<br>poetas Muertos</span></a>
     <ul class="nav-links"><li><a href="index.html">Inicio</a></li><li><a class="current" href="menu.html" aria-current="page">Menú</a></li><li><a href="index.html#versos">Versos</a></li><li><a href="index.html#visitanos">Visítanos</a></li><li><a class="nav-cta" href="eventos.html">Eventos</a></li></ul>
   </nav></header>
-  <section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">Café · poesía · música</span><h1>Primero entra<br>por los ojos.</h1><p>Descubre bebidas y alimentos de la casa en una carta más visual. Elige tu pausa y confirma en barra la presentación y disponibilidad del día.</p><a class="back" href="index.html">← Volver al inicio</a></div><div class="hero-photo" role="img" aria-label="Capuchino con arte latte sobre una mesa de madera en un café de ambiente literario"><span>Carta visual · muestra</span></div></div></section>
-  <main><div class="wrap">
+  <section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">Café · poesía · música</span><h1>Una pausa.<br>Muchos antojos.</h1><p>Del espresso intenso a algo dulce para acompañar. Explora la carta y encuentra tu combinación favorita.</p><a class="back" href="index.html">← Volver al inicio</a></div><div class="hero-photo" role="img" aria-label="Capuchino con arte latte sobre una mesa de madera en un café de ambiente literario"><span>Carta visual · muestra</span></div></div></section>
+  <main id="contenido"><div class="wrap">
     <p class="notice"><strong>Sobre esta carta:</strong> precios transcritos de la imagen del menú, en pesos mexicanos. “—” indica que la imagen no muestra un precio para esa preparación. Las descripciones de ingredientes son orientativas; confirma la receta y disponibilidad con el café.</p>
-    <section class="featured-menu" aria-labelledby="featured-title"><div class="featured-head"><div><span class="eyebrow">Favoritos de la casa</span><h2 id="featured-title">Mira, antoja y elige.</h2></div><p>Una selección breve para explorar visualmente. Las fotografías son ilustrativas y pueden diferir de la presentación final.</p></div><div class="filters" aria-label="Filtrar productos destacados"><button class="filter-button" type="button" data-filter="all" aria-pressed="true">Todos</button><button class="filter-button" type="button" data-filter="cafe" aria-pressed="false">Café</button><button class="filter-button" type="button" data-filter="frias" aria-pressed="false">Bebidas frías</button><button class="filter-button" type="button" data-filter="alimentos" aria-pressed="false">Alimentos</button></div><div class="visual-grid">
+    <section class="featured-menu" aria-labelledby="featured-title"><div class="featured-head"><div><span class="eyebrow">Favoritos de la casa</span><h2 id="featured-title">¿Qué se te antoja hoy?</h2></div><p>Una selección breve para explorar visualmente. Las fotografías son ilustrativas y pueden diferir de la presentación final.</p></div><div class="filters" aria-label="Filtrar productos destacados"><button class="filter-button" type="button" data-filter="all" aria-pressed="true">Todos</button><button class="filter-button" type="button" data-filter="cafe" aria-pressed="false">Café</button><button class="filter-button" type="button" data-filter="frias" aria-pressed="false">Bebidas frías</button><button class="filter-button" type="button" data-filter="alimentos" aria-pressed="false">Alimentos</button></div><p class="filter-status" role="status" aria-live="polite">6 opciones para descubrir</p><div class="visual-grid">
       <article class="visual-card" data-category="cafe"><div class="product-photo photo-1" role="img" aria-label="Capuchino con arte latte"></div><div class="visual-copy"><div class="visual-meta"><h3>Capuchino / Latte</h3><span class="visual-price">$60–$80</span></div><p>Espresso y leche en la proporción que prefieras, caliente, frío o frappé.</p></div></article>
       <article class="visual-card" data-category="cafe"><div class="product-photo photo-2" role="img" aria-label="Affogato con espresso y helado"></div><div class="visual-copy"><div class="visual-meta"><h3>Affogato</h3><span class="visual-price">$90</span></div><p>El contraste de un espresso intenso servido sobre helado.</p></div></article>
       <article class="visual-card" data-category="frias"><div class="product-photo photo-3" role="img" aria-label="Matcha latte frío con hielo"></div><div class="visual-copy"><div class="visual-meta"><h3>Matcha Latte</h3><span class="visual-price">$75–$95</span></div><p>Matcha y leche, con opciones caliente, fría o frappé.</p></div></article>
@@ -95,6 +97,7 @@
     document.querySelectorAll('.filter-button').forEach(button => button.addEventListener('click', () => {
       document.querySelectorAll('.filter-button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
       document.querySelectorAll('.visual-card').forEach(card => { card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter; });
+      document.querySelector('.filter-status').textContent = `${document.querySelectorAll('.visual-card:not([hidden])').length} opciones para descubrir`;
     }));
   </script>
 </body>

@@ -1,0 +1,20 @@
+[Unit]
+Description=El Cafe de los Poetas Muertos events API
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/elcafe/app
+EnvironmentFile=/etc/elcafe/events.env
+ExecStart=/opt/elcafe/venv/bin/python /opt/elcafe/app/server.py
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/opt/elcafe/app/uploads
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,32 @@
+# Ejemplo para un VPS con Apache, mod_proxy y PHP-FPM.
+# Reemplaza el dominio y las rutas por las de tu servidor.
+<VirtualHost *:80>
+    ServerName cafe.example.mx
+    ServerAlias www.cafe.example.mx
+    DocumentRoot /var/www/elcafe/public
+    DirectoryIndex index.php
+
+    <Directory /var/www/elcafe/public>
+        Options -Indexes
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    # Ajusta el socket a la versión PHP-FPM instalada (ejemplo: php8.2-fpm.sock).
+    <FilesMatch \.php$>
+        SetHandler "proxy:unix:/run/php/php8.2-fpm.sock|fcgi://localhost/"
+    </FilesMatch>
+
+    ProxyRequests Off
+    ProxyPreserveHost On
+    ProxyPass /api/ http://127.0.0.1:8000/api/
+    ProxyPassReverse /api/ http://127.0.0.1:8000/api/
+    ProxyPass /uploads/ http://127.0.0.1:8000/uploads/
+    ProxyPassReverse /uploads/ http://127.0.0.1:8000/uploads/
+
+    ErrorLog ${APACHE_LOG_DIR}/elcafe-error.log
+    CustomLog ${APACHE_LOG_DIR}/elcafe-access.log combined
+</VirtualHost>
+
+# Activa HTTPS y la redirección HTTP -> HTTPS con el certificado del proveedor
+# (por ejemplo, Let's Encrypt) antes de habilitar COOKIE_SECURE=1.

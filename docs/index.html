@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100e">
+    <meta name="description" content="El Café de los poetas Muertos: café, poesía y buenas conversaciones. Ven a encontrar tu lugar entre versos y café recién hecho.">
+  <title>El Café de los poetas Muertos — Café y poesía</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#11100e;--panel:#191714;--cream:#f5efdf;--muted:#b9b09e;--gold:#d6ad59;--red:#9e493c;--line:#38332b;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--ink);color:var(--cream);font:16px/1.65 var(--sans)}a{color:inherit}img{max-width:100%;display:block}button,input,select{font:inherit}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}.eyebrow{color:var(--gold);font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}.section{padding:100px 0}.section-title{font:600 clamp(2.1rem,5vw,3.5rem)/1.12 var(--serif);margin:12px 0 18px}.section-intro{color:var(--muted);max-width:620px;margin:0 auto 48px}.center{text-align:center}
+    .topbar{height:76px;position:fixed;inset:0 0 auto;z-index:20;background:rgba(17,16,14,.94);border-bottom:1px solid rgba(214,173,89,.24);backdrop-filter:blur(12px)}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{font:700 1rem var(--serif);letter-spacing:.035em;text-decoration:none;display:flex;gap:12px;align-items:center}.brand img{width:43px;height:43px;object-fit:cover;border-radius:50%;border:1px solid var(--gold)}.brand span{max-width:220px;line-height:1.2}.nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}.nav-links a{text-decoration:none;color:#e6dfd0;font-size:.83rem}.nav-links a:hover{color:var(--gold)}.nav-links .nav-cta{padding:10px 16px;border:1px solid var(--gold);color:var(--gold)}.menu-toggle{display:none;background:none;color:var(--cream);border:1px solid var(--line);padding:8px 11px;border-radius:3px}
+    .hero{min-height:740px;height:min(900px,100svh);padding:130px 0 70px;display:grid;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 72% 48%,rgba(111,72,37,.2),transparent 40%),linear-gradient(90deg,#11100e 3%,rgba(17,16,14,.94) 41%,rgba(17,16,14,.55) 100%),url('images/images%20(1).jfif') 75% center/ min(660px,65vw) auto no-repeat}.hero:after{content:"";position:absolute;inset:auto 0 0;height:150px;background:linear-gradient(transparent,var(--ink));pointer-events:none}.hero-content{position:relative;z-index:1;max-width:690px}.hero .eyebrow{margin-bottom:20px}.hero h1{font:700 clamp(3.2rem,8vw,6.6rem)/.98 var(--serif);letter-spacing:-.04em;margin:0 0 24px}.hero h1 em{font-weight:500;color:var(--gold)}.hero p{max-width:500px;color:#d0c7b7;font-size:1.08rem;margin:0 0 32px}.actions{display:flex;gap:13px;flex-wrap:wrap}.button{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;border:1px solid var(--gold);padding:13px 21px;color:var(--ink);background:var(--gold);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;transition:.2s}.button:hover{transform:translateY(-2px);background:#e4c477}.button-ghost{background:transparent;color:var(--cream);border-color:#73664d}.button-ghost:hover{color:var(--ink)}.hero-note{position:absolute;z-index:1;right:7%;bottom:105px;color:var(--gold);font:italic 1rem var(--serif);writing-mode:vertical-rl;letter-spacing:.08em}
+    .manifesto{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#151310;padding:30px 0}.manifesto p{margin:0;text-align:center;color:var(--muted);font:italic 1.18rem var(--serif)}.manifesto b{color:var(--gold);font-weight:500}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:70px}.story-art{min-height:440px;position:relative;background:linear-gradient(140deg,#33291d,#171512 65%);display:grid;place-items:center;border:1px solid #453b2b}.story-art:before,.story-art:after{content:"";position:absolute;inset:18px;border:1px solid rgba(214,173,89,.25)}.story-art:after{inset:30px}.story-art img{width:min(62%,280px);position:relative;z-index:1;filter:sepia(.2);box-shadow:0 18px 55px #000}.story-copy p{color:var(--muted)}.story-copy .lead{font:1.25rem/1.6 var(--serif);color:var(--cream)}
+    .menu-section{background:#151310;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.menu-card{padding:28px;background:var(--panel);border:1px solid #2e2a24}.menu-card h3{margin:0 0 23px;color:var(--gold);font:600 1.45rem var(--serif)}.dish{display:grid;grid-template-columns:1fr auto;gap:2px 15px;padding:0 0 17px;margin:0 0 17px;border-bottom:1px dotted #484136}.dish:last-child{padding:0;margin:0;border:0}.dish strong{font-size:.98rem;font-weight:600}.dish span{color:var(--gold);font-size:.9rem;white-space:nowrap}.dish small{grid-column:1/-1;color:var(--muted);font-size:.82rem}.menu-foot{margin-top:24px;color:var(--muted);font-size:.82rem;text-align:center}
+    .poetry-section{background:#151310;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}.poetry-viewport{overflow:hidden}.poetry-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 36px)/3);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}.poetry-track::-webkit-scrollbar{display:none}.poetry-card{min-height:270px;scroll-snap-align:start;padding:26px;background:var(--panel);border:1px solid #373127;display:flex;flex-direction:column;justify-content:space-between;position:relative}.poetry-card:before{content:"“";font:5rem/.7 var(--serif);color:rgba(214,173,89,.3);position:absolute;top:25px;right:22px}.poetry-label{color:var(--gold);font-size:.67rem;letter-spacing:.15em;text-transform:uppercase}.poetry-card blockquote{font:italic 1.18rem/1.55 var(--serif);margin:22px 0;max-width:95%}.poetry-author{font-weight:700;font-size:.88rem}.poetry-controls{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:28px}.poetry-controls button{width:42px;height:42px;border:1px solid #62553d;background:transparent;color:var(--gold);font-size:1.15rem;cursor:pointer}.poetry-controls button:hover{background:var(--gold);color:var(--ink)}.poetry-status{color:var(--muted);font-size:.78rem;min-width:70px;text-align:center}
+    .quote-section{padding:84px 0;background:linear-gradient(120deg,#2a2118,#171512 70%);text-align:center}.quote-section blockquote{max-width:780px;margin:0 auto 15px;font:italic clamp(1.7rem,4vw,2.7rem)/1.3 var(--serif)}.quote-section cite{color:var(--gold);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-style:normal}
+    .home-event-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px;align-items:stretch}.home-event-card{width:min(100%,440px);justify-self:center;background:var(--panel);border:1px solid #353026;display:flex;flex-direction:column;overflow:hidden;transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}.home-event-card img{width:100%;aspect-ratio:16/8;object-fit:cover;background:#252117}.home-event-content{padding:20px 23px;display:flex;flex:1;flex-direction:column}.home-event-card h3{font:600 1.45rem/1.2 var(--serif);margin:0 0 9px}.home-event-card p{color:#c5bdaf;font-size:.9rem;margin:0 0 20px}.home-event-meta{color:var(--gold);font-size:.82rem;display:flex;flex-wrap:wrap;gap:7px 16px;margin-bottom:14px}.home-event-card .button{align-self:flex-start;margin-top:auto}.home-event-empty{grid-column:1/-1;padding:18px;background:var(--panel);text-align:center;color:var(--muted)}
+    @media(max-width:700px){.home-event-list{grid-template-columns:1fr}.home-event-card{max-width:440px}}
+    .visit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:start}.visit-copy p{color:var(--muted)}.details{margin:28px 0;display:grid;gap:16px}.detail{display:grid;grid-template-columns:100px 1fr;gap:14px;padding-bottom:13px;border-bottom:1px solid var(--line)}.detail b{color:var(--gold);font-size:.82rem;text-transform:uppercase;letter-spacing:.09em}.detail span{color:#ddd4c4}.booking{padding:30px;background:var(--panel);border:1px solid var(--line)}.booking h3{font:600 1.6rem var(--serif);margin:0 0 5px}.booking>p{color:var(--muted);font-size:.86rem;margin:0 0 22px}.field{margin:0 0 15px}.field label{display:block;font-size:.77rem;color:var(--gold);margin-bottom:6px}.field input,.field select{width:100%;background:#100f0d;color:var(--cream);border:1px solid #454036;padding:11px 12px;border-radius:0}.field input:focus,.field select:focus{outline:2px solid var(--gold);outline-offset:1px}.booking .button{width:100%;cursor:pointer}.form-note{font-size:.75rem!important;margin:12px 0 0!important}.form-message{min-height:22px;color:var(--gold);font-size:.85rem;margin-top:12px}.map-panel{width:min(560px,100%);aspect-ratio:1;margin:48px auto 0;border:1px solid var(--line);background:var(--panel)}.map-panel iframe{display:block;width:100%;height:calc(100% - 53px);border:0;filter:grayscale(.65) contrast(.95)}.map-caption{height:53px;padding:10px 14px;color:var(--muted);font-size:.75rem;line-height:1.4;overflow:auto}.map-caption a{color:var(--gold);text-decoration:none;margin-left:8px}.map-caption a:hover{text-decoration:underline}
+    footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-size:.78rem}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{font:600 1rem var(--serif);color:var(--cream)}.footer-links{display:flex;gap:18px}.footer-links a{text-decoration:none}.footer-links a:hover{color:var(--gold)}.social-link{display:inline-flex;align-items:center;color:var(--gold)!important}.social-link svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}.social-link:hover svg{transform:translateY(-2px) scale(1.08)}.social-link:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+    @media(max-width:760px){.wrap{width:min(100% - 36px,580px)}.section{padding:76px 0}.topbar{height:68px}.brand img{width:38px;height:38px}.brand span{font-size:.86rem;max-width:185px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#151310;padding:15px 22px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 4px}.nav-links .nav-cta{border:0;padding:12px 4px}.hero{min-height:700px;height:calc(100svh - 10px);max-height:850px;padding-top:120px;background:linear-gradient(90deg,rgba(17,16,14,.9),rgba(17,16,14,.68)),linear-gradient(0deg,#11100e 0%,transparent 60%),url('images/images%20(1).jfif') center 47%/min(500px,100vw) auto no-repeat}.hero-content{align-self:center}.hero h1{font-size:clamp(3.1rem,13vw,5rem)}.hero-note{display:none}.manifesto{padding:24px 10px}.manifesto p{font-size:1rem}.story-grid,.visit-grid{grid-template-columns:1fr;gap:36px}.story-art{min-height:330px;order:2}.menu-grid{grid-template-columns:1fr}.poetry-track{grid-auto-columns:calc((100% - 18px)/2)}.poetry-card{min-height:250px;padding:22px}.map-panel{width:min(460px,100%);margin-top:38px}.map-caption{font-size:.7rem}.footer-row{flex-direction:column;text-align:center}.footer-links{flex-wrap:wrap;justify-content:center}}
+    @media(max-width:420px){.wrap{width:calc(100% - 28px)}.hero{min-height:670px}.hero p{font-size:1rem}.button{padding:12px 15px;font-size:.74rem}.menu-card,.booking{padding:22px}.detail{grid-template-columns:82px 1fr}.poetry-track{grid-auto-columns:88%}.map-panel{width:min(100%,360px)}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    .hero{background:radial-gradient(ellipse at 72% 48%,rgba(111,72,37,.2),transparent 40%),linear-gradient(90deg,#11100e 3%,rgba(17,16,14,.94) 41%,rgba(17,16,14,.55) 100%)}
+    .hero-portraits{position:absolute;inset:0 0 0 28%;z-index:0;overflow:hidden;pointer-events:none;mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 86%,transparent 100%)}
+    .hero-portraits img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;filter:grayscale(1) sepia(.18) contrast(1.08);opacity:0;animation:portraitCycle 15s infinite both;animation-delay:var(--portrait-delay);transform:scale(1.04)}
+    .hero-portraits:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#11100e 0%,rgba(17,16,14,.62) 36%,rgba(17,16,14,.5) 100%),linear-gradient(0deg,#11100e 0%,transparent 32%,rgba(17,16,14,.16) 100%)}
+    @keyframes portraitCycle{0%{opacity:.25;transform:scale(1.045)}16%{opacity:.25}24%{opacity:0;transform:scale(1.1)}100%{opacity:0;transform:scale(1.1)}}
+    @media(max-width:760px){.hero-portraits{inset:0 0 0 10%;mask-image:linear-gradient(90deg,transparent 0%,#000 24%,#000 100%)}.hero-portraits img{object-position:58% 25%}}
+    @media(prefers-reduced-motion:reduce){.hero-portraits img{animation:none;opacity:0}.hero-portraits img:first-child{opacity:.22}}
+    .story-art:before,.story-art:after{z-index:1;pointer-events:none}
+    .story-art .place-photo{position:absolute;inset:0;z-index:0;width:100%;height:100%;max-width:none;object-fit:cover;filter:sepia(.18) brightness(.72);box-shadow:none}
+    .menu-feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(24px,6vw,76px);text-align:left}
+    .menu-feature img{width:100%;max-height:480px;object-fit:cover;border:1px solid #453b2b;box-shadow:0 24px 65px #0008}
+    .menu-feature .section-intro{margin:0 0 28px}
+    @media(max-width:760px){.menu-feature{grid-template-columns:1fr}.menu-feature img{max-height:380px;order:2}}
+    .button,.nav-links a,.social-link svg{transition:transform .3s cubic-bezier(.2,.75,.25,1),color .3s ease,background-color .3s ease,border-color .3s ease,box-shadow .3s ease}
+    .button:hover{transform:translateY(-3px);box-shadow:0 9px 22px rgba(214,173,89,.2)}
+    .story-art,.menu-feature img,.menu-card,.home-event-card,.booking,.detail,.map-panel{transition:transform .45s cubic-bezier(.2,.75,.25,1),border-color .35s ease,box-shadow .45s ease}
+    .poetry-card{transform:translateY(0) scale(1);transform-origin:center;transition:transform .48s cubic-bezier(.2,.75,.25,1),background-color .35s ease,border-color .35s ease,box-shadow .45s ease}
+    .poetry-card:before{transition:transform .5s ease,color .35s ease}
+    .poetry-card blockquote{transition:transform .45s ease,color .35s ease}
+    .poetry-controls button{transition:transform .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease}
+    .reveal-on-scroll{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .8s cubic-bezier(.2,.75,.25,1);transition-delay:var(--reveal-delay,0ms)}
+    .reveal-on-scroll.is-visible{opacity:1;transform:translateY(0)}
+    .hero-content{animation:heroRise .9s cubic-bezier(.2,.75,.25,1) both}
+    @keyframes heroRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    @media(hover:hover){.poetry-card:hover,.poetry-card:focus-within{transform:translateY(-8px) scale(1.018);background:#201d18;border-color:#927749;box-shadow:0 20px 38px rgba(0,0,0,.32);z-index:1}.poetry-card:hover:before{transform:translateY(-4px) rotate(-8deg);color:rgba(214,173,89,.55)}.poetry-card:hover blockquote{transform:translateX(3px)}.story-art:hover,.menu-feature img:hover,.menu-card:hover,.home-event-card:hover,.home-event-card:focus-within{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 18px 38px rgba(0,0,0,.3)} @media(prefers-reduced-motion:reduce){.home-event-card{transition:none!important}.home-event-card:hover,.home-event-card:focus-within{transform:none!important}}.detail:hover{transform:translateX(4px);border-color:#776341}.poetry-controls button:hover{transform:translateY(-2px);background:var(--gold);color:var(--ink);border-color:var(--gold)}}
+    @media(prefers-reduced-motion:reduce){.reveal-on-scroll{opacity:1;transform:none;transition:none}.hero-content{animation:none}.poetry-card,.poetry-card:before,.poetry-card blockquote,.poetry-controls button,.story-art,.menu-feature img,.menu-card,.home-event-card,.booking,.detail,.map-panel{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><nav class="nav wrap" aria-label="Navegación principal">
+    <a class="brand" href="#inicio"><img src="images/images%20(1).jfif" alt="Emblema de El Café de los poetas Muertos"><span>El Café de los<br>poetas Muertos</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">☰</button>
+    <ul class="nav-links" id="nav-links"><li><a href="#historia">La casa</a></li><li><a href="menu.html">Menú</a></li><li><a href="#eventos">Eventos</a></li><li><a href="#versos">Versos</a></li><li><a href="#visitanos">Visítanos</a></li><li><a class="nav-cta" href="eventos.html">Inscríbete</a></li></ul>
+  </nav></header>
+  <main>
+    <section class="hero" id="inicio"><div class="hero-portraits" aria-hidden="true"><img src="images/escritores/benedetti.jfif" alt="" style="--portrait-delay:0s"><img src="images/escritores/borges.jfif" alt="" style="--portrait-delay:-3s"><img src="images/escritores/EDGAR%20ALAN%20POE.jpg" alt="" style="--portrait-delay:-6s"><img src="images/escritores/julio%20cortazar.jfif" alt="" style="--portrait-delay:-9s"><img src="images/escritores/pizarnik%7D.jfif" alt="" style="--portrait-delay:-12s"></div><div class="wrap"><div class="hero-content">
+      <div class="eyebrow">Café · Poesía · Musica</div>
+      <h1>Un café para<br><em>quedarse</em><br>un verso más.</h1>
+      <p>Entre aromas, libros y conversaciones que no miran el reloj, siempre hay lugar para una taza más.</p>
+      <div class="actions"><a class="button" href="menu.html">Descubre el menú</a><a class="button button-ghost" href="eventos.html">Próximos eventos</a></div>
+    </div></div><div class="hero-note">Carpe diem · sirve otro café</div></section>
+    <div class="manifesto"><div class="wrap"><p>“Aquí los días se toman <b>despacio</b> y las ideas, <b>bien cargadas</b>.”</p></div></div>
+    <section class="section" id="historia"><div class="wrap story-grid"><div class="story-art"><img class="place-photo" src="images/lugar.jfif" alt="Interior de El Café de los Poetas Muertos, con muros de ladrillo y luz cálida" loading="lazy"></div><div class="story-copy"><span class="eyebrow">Nuestra pequeña revolución</span><h2 class="section-title">Un refugio para<br>las almas despiertas.</h2><p class="lead">Creemos que un buen café puede abrir la puerta a una gran conversación. Y que la poesía, como la cafeína, siempre encuentra la manera de mantenernos vivos.</p><p>Somos una cafetería para lectores, curiosos y amantes de la sobremesa. Ven por el espresso, quédate por la compañía y deja que el día encuentre su propio ritmo.</p><a class="button button-ghost" href="#visitanos">Ven a conocernos</a></div></div></section>
+    <section class="section menu-section" id="menu"><div class="wrap menu-feature"><img src="images/cafe.webp" alt="Taza de café servida en el local, con una frase literaria" loading="lazy"><div><span class="eyebrow">Una pausa con carácter</span><h2 class="section-title">Del grano a la página</h2><p class="section-intro">Café caliente, frío o frappé, bebidas para todos los antojos y algo rico para acompañar. Así se vive una pausa en nuestra casa.</p><a class="button" href="menu.html">Ver menú completo y precios</a></div></div></section>
+    <section class="section" id="eventos"><div class="wrap"><div class="center"><span class="eyebrow">Encuentros en la cafetería</span><h2 class="section-title">Próximos eventos</h2><p class="section-intro">Lecturas, talleres y noches para compartir. Elige un evento y aparta tu lugar.</p></div><div class="home-event-list" id="home-event-list"><p class="home-event-empty">Cargando eventos…</p></div><div class="center" style="margin-top:28px"><a class="button" href="eventos.html">Ver todos los eventos e inscribirme</a></div></div></section>
+    <section class="section poetry-section" id="versos"><div class="wrap"><div class="center"><span class="eyebrow">Lecturas para acompañar tu taza</span><h2 class="section-title">Voces que nos inspiran</h2><p class="section-intro">Pequeños homenajes originales a grandes autores. Estos textos no son citas ni fragmentos de sus obras.</p></div><div class="poetry-viewport"><div class="poetry-track" id="poetry-track" aria-label="Tarjetas de homenajes literarios">
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>Hay palabras que no curan la herida: se sientan a nuestro lado hasta que amanece.</blockquote><span class="poetry-author">En la mesa de Jaime Sabines</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>Dejo una luz encendida en la página, por si la nostalgia decide volver a casa.</blockquote><span class="poetry-author">En la mesa de Mario Benedetti</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>Una biblioteca cabe en un cuarto; el infinito, a veces, cabe en una taza.</blockquote><span class="poetry-author">En la mesa de Jorge Luis Borges</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>La noche abre su jardín secreto y una voz pequeña aprende a nombrar la ausencia.</blockquote><span class="poetry-author">En la mesa de Alejandra Pizarnik</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>El corazón también tiene estaciones: hoy florece despacio, junto a la ventana.</blockquote><span class="poetry-author">En la mesa de Sor Juana Inés de la Cruz</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>Cuando el camino se pierde entre la niebla, cada paso inventa su propia brújula.</blockquote><span class="poetry-author">En la mesa de Antonio Machado</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>El silencio guarda semillas; basta una palabra tibia para que vuelva la primavera.</blockquote><span class="poetry-author">En la mesa de Gabriela Mistral</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>La ciudad cambia de rostro cuando la miramos desde el último café de la tarde.</blockquote><span class="poetry-author">En la mesa de Julio Cortázar</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>Una página en blanco también respira: espera que alguien la llame por su nombre.</blockquote><span class="poetry-author">En la mesa de Rosario Castellanos</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>Hay lunas que caben en el bolsillo y noches que piden ser contadas sin prisa.</blockquote><span class="poetry-author">En la mesa de Federico García Lorca</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>De todas las despedidas, la más dulce deja encendida una lámpara en la memoria.</blockquote><span class="poetry-author">En la mesa de Alfonsina Storni</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>Al fondo del vaso, el tiempo se detiene lo justo para escuchar una historia.</blockquote><span class="poetry-author">En la mesa de Edgar Allan Poe</span></article>
+      <article class="poetry-card"><span class="poetry-label">Homenaje · texto original</span><blockquote>La palabra encuentra su orilla cuando alguien la lee en voz baja.</blockquote><span class="poetry-author">En la mesa de Octavio Paz</span></article>
+    </div></div><div class="poetry-controls"><button type="button" id="poetry-prev" aria-label="Tarjetas anteriores">←</button><span class="poetry-status" id="poetry-status" aria-live="polite">1–3 de 13</span><button type="button" id="poetry-next" aria-label="Más tarjetas">→</button></div></div></section>
+    <section class="quote-section"><div class="wrap"><blockquote>“La vida es eso que pasa entre el primer sorbo y el último verso.”</blockquote><cite>Una verdad de esta casa</cite></div></section>
+    <section class="section" id="visitanos"><div class="wrap visit-grid"><div class="visit-copy"><span class="eyebrow">La mesa está puesta</span><h2 class="section-title">Nos vemos<br>entre tazas.</h2><p>Ven a leer un rato, platicar sin prisa o simplemente disfrutar el aroma del café recién hecho.</p><div class="details"><div class="detail"><b>Dirección</b><span>Blvd. Vasco de Quiroga 318, colonia Las Fuentes, León, Guanajuato.</span></div><div class="detail"><b>Horario</b><span>Actualiza aquí los días y horarios de atención</span></div><div class="detail"><b>Contacto</b><span>Agrega aquí teléfono o redes sociales</span></div></div></div>
+      <div class="booking"><h3>Nos encontramos en los eventos</h3><p>Organiza una lectura, taller o encuentro cultural; o inscríbete para participar en los próximos eventos del café.</p><a class="button" href="eventos.html">Explorar eventos e inscribirme</a><p class="form-note">¿Organizas un evento? Solicita al café acceso administrativo para publicarlo.</p></div>
+    </div><div class="wrap map-panel"><iframe title="Mapa de El Café de los poetas Muertos en León, Guanajuato" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.8198606587935!2d-101.6575824!3d21.119746799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbf0062397483%3A0x31f7c76a66b78538!2sEl%20caf%C3%A9%20de%20los%20poetas%20muertos!5e0!3m2!1ses-419!2smx!4v1792469357298!5m2!1ses-419!2smx" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe><div class="map-caption">Blvd. Vasco de Quiroga 318, colonia Las Fuentes, León, Guanajuato. <a href="https://www.google.com/maps/search/?api=1&query=El+caf%C3%A9+de+los+poetas+muertos+Le%C3%B3n+Guanajuato" target="_blank" rel="noopener noreferrer">Abrir indicaciones en Google Maps ↗</a></div></div></section>
+  </main>
+  <footer><div class="wrap footer-row"><div class="footer-brand">El Café de los Poetas Muertos</div><div>Un café para quedarse un verso más.</div><div class="footer-links"><a href="#inicio">Inicio</a><a href="menu.html">Menú</a><a href="#visitanos">Contacto</a><a class="social-link" href="https://www.instagram.com/elcafedelospoetasmuertos?obrf=MXh5bGdsYnRxZXl2NQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram de El Café de los Poetas Muertos (abre en pestaña nueva)" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r=".8" fill="currentColor" stroke="none"/></svg></a><a class="social-link" href="https://www.facebook.com/profile.php?id=61551230459953&amp;sk=directory_category" target="_blank" rel="noopener noreferrer" aria-label="Facebook de El Café de los Poetas Muertos (abre en pestaña nueva)" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.2V10H7.3v3H10v8h3.4z"/></svg></a></div><div>© 2026 · Hecho con café y poesía</div></div></footer>
+  <script>
+    // Sustituye este valor por el número del negocio, con código de país y solo dígitos (ej. 5215512345678).
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      toggle.textContent = isOpen ? '×' : '☰';
+    });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); toggle.textContent = '☰';
+    }));
+    const poetryTrack = document.getElementById('poetry-track');
+    const poetryCards = [...poetryTrack.children];
+    const poetryStatus = document.getElementById('poetry-status');
+    const poetryCardPosition = card => card.getBoundingClientRect().left - poetryTrack.getBoundingClientRect().left + poetryTrack.scrollLeft;
+    function poetryVisibleCount() {
+      const cardWidth = poetryCards[0].getBoundingClientRect().width;
+      return Math.max(1, Math.round((poetryTrack.clientWidth + 18) / (cardWidth + 18)));
+    }
+    function updatePoetryStatus() {
+      const visibleCount = poetryVisibleCount();
+      const index = poetryCards.reduce((best, card, i) =>
+        Math.abs(poetryCardPosition(card) - poetryTrack.scrollLeft) < Math.abs(poetryCardPosition(poetryCards[best]) - poetryTrack.scrollLeft) ? i : best, 0);
+      poetryStatus.textContent = `${index + 1}–${Math.min(index + visibleCount, poetryCards.length)} de ${poetryCards.length}`;
+    }
+    function movePoetry(direction) {
+      const visibleCount = poetryVisibleCount();
+      const closestIndex = poetryCards.reduce((best, card, i) =>
+        Math.abs(poetryCardPosition(card) - poetryTrack.scrollLeft) < Math.abs(poetryCardPosition(poetryCards[best]) - poetryTrack.scrollLeft) ? i : best, 0);
+      const maxIndex = Math.max(0, poetryCards.length - visibleCount);
+      const nextIndex = Math.max(0, Math.min(maxIndex, closestIndex + direction * visibleCount));
+      poetryTrack.scrollTo({ left: poetryCardPosition(poetryCards[nextIndex]), behavior: 'smooth' });
+      poetryStatus.textContent = `${nextIndex + 1}–${Math.min(nextIndex + visibleCount, poetryCards.length)} de ${poetryCards.length}`;
+    }
+    document.getElementById('poetry-prev').addEventListener('click', () => movePoetry(-1));
+    document.getElementById('poetry-next').addEventListener('click', () => movePoetry(1));
+    poetryTrack.addEventListener('scroll', updatePoetryStatus, { passive: true });
+    window.addEventListener('resize', updatePoetryStatus);
+    updatePoetryStatus();
+    async function loadHomeEvents() {
+      const target = document.getElementById('home-event-list');
+      if (location.hostname.endsWith('github.io')) {
+        target.innerHTML = '<p class="home-event-empty">La agenda en línea se habilita en la versión con servidor. Mientras tanto, consulta las próximas actividades directamente en las redes del café.</p>';
+        return;
+      }
+      const controller = new AbortController();
+      const requestTimeout = setTimeout(() => controller.abort(), 8000);
+      try {
+        const localPreview = location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(location.hostname);
+        const apiBase = localPreview ? 'http://127.0.0.1:8000' : '';
+        const response = await fetch(`${apiBase}/api/events`, { signal: controller.signal, cache: 'no-store' });
+        if (!response.ok) throw new Error('No disponible');
+        const {events} = await response.json();
+        const upcoming = events.filter(event => event.status === 'active').slice(0, 3);
+        if (!upcoming.length) {
+          target.innerHTML = '<p class="home-event-empty">Pronto anunciaremos nuevos encuentros. Consulta aquí las fechas.</p>';
+          return;
+        }
+        const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+        target.innerHTML = upcoming.map(event => `<article class="home-event-card">${event.image ? `<img src="${apiBase}${escape(event.image)}" alt="Imagen del evento ${escape(event.name)}" loading="lazy">` : ''}<div class="home-event-content"><span class="home-event-meta">${new Intl.DateTimeFormat('es-MX',{dateStyle:'long',timeStyle:'short'}).format(new Date(event.startsAt))} · ${event.available} lugares</span><h3>${escape(event.name)}</h3><p>${escape(event.description.slice(0,180))}${event.description.length>180?'…':''}</p><a class="button button-ghost" href="eventos.html">Ver e inscribirme</a></div></article>`).join('');
+      } catch (error) {
+        console.error('No fue posible cargar los eventos:', error);
+        target.innerHTML = '<p class="home-event-empty">No fue posible conectar con el servidor de eventos. Abre <a href="http://127.0.0.1:8000/">127.0.0.1:8000</a> y confirma que el servidor Python este iniciado.</p>';
+      } finally {
+        clearTimeout(requestTimeout);
+      }
+    }
+    loadHomeEvents();
+    /* El registro ahora se gestiona desde la página de eventos. */
+    const dateField = document.getElementById('fecha');
+    const today = new Date();
+    dateField.min = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    document.getElementById('reservar').addEventListener('submit', event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      if (!52477) {
+        document.getElementById('form-message').textContent = 'Para activar las reservas, configura el número de WhatsApp del café en el código de esta página.';
+        return;
+      }
+      const data = new FormData(form);
+      const message = [
+        'Hola, quiero reservar una mesa en El Café de los Poetas Muertos.',
+        '',
+        `Nombre: ${data.get('nombre')}`,
+        `Personas: ${data.get('personas')}`,
+        `Fecha: ${data.get('fecha')}`,
+        `Hora: ${data.get('hora')}`
+      ].join('\n');
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?${new URLSearchParams({ text: message })}`;
+      window.open(whatsappUrl, '_blank');
+      document.getElementById('form-message').textContent = 'Se abrió el chat del café con tu solicitud. Pulsa Enviar en WhatsApp para confirmar la reserva.';
+    });
+  </script>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+      const revealItems = document.querySelectorAll('main > section:not(.hero), main > .manifesto, footer');
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+      revealItems.forEach((item, index) => {
+        item.classList.add('reveal-on-scroll');
+        item.style.setProperty('--reveal-delay', `${(index % 3) * 90}ms`);
+        revealObserver.observe(item);
+      });
+    }
+  </script>
+</body>
+</html>
+

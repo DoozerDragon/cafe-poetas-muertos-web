@@ -1,0 +1,15 @@
+eventos.sqlite3
+eventos.sqlite3-shm
+eventos.sqlite3-wal
+uploads/*
+!uploads/.gitkeep
+events-server.log
+events-server-error.log
+debug.log
+*.log
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.claude/

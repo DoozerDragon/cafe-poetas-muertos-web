@@ -6,6 +6,8 @@ Sitio web y sistema de eventos de la cafetería. Usa PHP para las páginas, Pyth
 
 La carpeta `docs/` contiene una versión estática de la portada, el menú visual y la página informativa de eventos. Se genera con:
 
+**Sitio publicado:** https://doozerdragon.github.io/cafe-poetas-muertos-web/
+
 ```powershell
 .\build-pages.ps1
 ```
